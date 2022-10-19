@@ -12,24 +12,65 @@
 <body>
 
     <header>
-        <h1>DojoWeather</h1>
+        <h1 class="logo">DojoWeather</h1>
         <div class="cities">
-            <p>Burbank</p>
-            <p>Chicago</p>
-            <p>Dallas</p>
+            <p class="headerCity" onclick="loadWeather()">Burbank</p>
+            <p class="headerCity" onclick="loadWeather()">Chicago</p>
+            <p class="headerCity" onclick="loadWeather()">Dallas</p>
         </div>
     </header>
     <div class="mainContent">
         <div class="currentCity">
             <h2>San Jose</h2>
             <p>show temperature in
-                <select name="temp">
+                <select onchange="changeToF(); changeToC()" id="temp">
                     <option value="celcius">C&deg;</option>
                     <option value="farenheit">F&deg;</option>
                 </select>
             </p>
         </div>
-        
+        <div id="forecast">
+            <div class="daily_weather" id="today">
+                <p class="day_title">Today</p>
+                <img class="round_weather" src="assets/some_rain.png" alt="rain falling from a cloud">
+                <div class="daily_temps">
+                    <p class="high_temp convert" id="convert">24</p>
+                    <p class="low_temp convert" id="convert">19</p>
+                </div>
+            </div>
+            <div class="daily_weather" id="tomorrow">
+                <p class="day_title">Tomorrow</p>
+                <img class="round_weather" src="assets/some_sun.png" alt="a sun shining">
+                <div class="daily_temps">
+                    <p class="high_temp convert" id="convert">27</p>
+                    <p class="low_temp convert" id="convert">19</p>
+                </div>
+            </div>
+            <div class="daily_weather" id="friday">
+                <p class="day_title">Friday</p>
+                <img class="round_weather" src="assets/some_clouds.png" alt="a cloud">
+                <div class="daily_temps">
+                    <p class="high_temp convert" id="convert">21</p>
+                    <p class="low_temp convert" id="convert">16</p>
+                </div>
+            </div>
+            <div class="daily_weather" id="saturday">
+                <p class="day_title">Saturday</p>
+                <img class="round_weather" src="assets/some_clouds.png" alt="a cloud">
+                <div class="daily_temps">
+                    <p class="high_temp convert" id="convert">24</p>
+                    <p class="low_temp convert" id="convert">21</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cookie_popup">
+        <img src="assets/cookie.png" alt="a cookie with a bite missing">
+        <div id="popup_text">
+            <p id="popup_title">Stop! Cookie Time</p>
+            <p id="popup_body">We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features, and to analyse our traffic. <a href="https://www.phrases.org.uk/meanings/road-apples.html">Read More.</a></p>
+        </div>
+        <button id="cookie_agree" type="button" onclick="popOut()">I Agree</button>
     </div>
 
 
